@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angsa Kristal Premium — Pajangan Dashboard Mobil Mewah</title>
+  <meta name="description" content="Pajangan dashboard mobil motif angsa kristal premium yang berputar otomatis dengan tenaga cahaya matahari. Tanpa baterai, tanpa listrik. Sentuhan mewah untuk interior mobil Anda.">
+  <meta name="keywords" content="pajangan dashboard mobil, angsa kristal, solar putar, aksesoris mobil mewah, interior mobil premium">
+  <meta property="og:title" content="Angsa Kristal Premium — Pajangan Dashboard Mobil Mewah">
+  <meta property="og:description" content="Sentuhan mewah untuk dashboard mobil Anda. Angsa kristal premium berputar otomatis dengan tenaga matahari.">
+  <meta property="og:type" content="website">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#fdf8e8',
+              100: '#f9ecb8',
+              200: '#f5de87',
+              300: '#f0d056',
+              400: '#e6c237',
+              500: '#c9a227',
+              600: '#a6841e',
+              700: '#836618',
+              800: '#614912',
+              900: '#3f300c',
+            },
+            luxury: {
+              50: '#fafafa',
+              100: '#f5f5f5',
+              200: '#eeeeee',
+              300: '#e0e0e0',
+              400: '#bdbdbd',
+              500: '#9e9e9e',
+              600: '#757575',
+              700: '#616161',
+              800: '#424242',
+              900: '#1a1a1a',
+            }
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    .font-playfair { font-family: 'Playfair Display', serif; }
+
+    /* Gold shimmer gradient */
+    .gold-shimmer {
+      background: linear-gradient(135deg, #c9a227 0%, #f0d056 25%, #e6c237 50%, #c9a227 75%, #f0d056 100%);
+      background-size: 200% 200%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Fade in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Luxury button hover */
+    .btn-gold {
+      background: linear-gradient(135deg, #c9a227, #e6c237, #c9a227);
+      background-size: 200% 200%;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-gold:hover::before {
+      left: 100%;
+    }
+
+    .btn-gold:hover {
+      background-position: 100% 0;
+      box-shadow: 0 8px 30px rgba(201, 162, 39, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Card hover */
+    .luxury-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .luxury-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Product card hover */
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.08);
+    }
+
+    .product-img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* WhatsApp pulse */
+    .whatsapp-btn {
+      animation: pulse-gold 2s infinite;
+    }
+
+    @keyframes pulse-gold {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Decorative divider */
+    .gold-divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #c9a227, transparent);
+    }
+
+    /* Star rating */
+    .star-gold {
+      color: #c9a227;
+    }
+
+    /* Hero gradient */
+    .hero-bg {
+      background: linear-gradient(170deg, #fafafa 0%, #f5f5f5 30%, #fdf8e8 60%, #fafafa 100%);
+    }
+
+    /* Dark section */
+    .dark-luxury {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    }
+
+    /* Floating effect */
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f5f5f5; }
+    ::-webkit-scrollbar-thumb { background: #c9a227; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #a6841e; }
+
+    /* Badge best seller */
+    .badge-best-seller {
+      background: linear-gradient(135deg, #c9a227, #e6c237);
+    }
+
+    /* Benefit icon circle */
+    .benefit-icon-circle {
+      background: linear-gradient(135deg, #fdf8e8, #f9ecb8);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+    }
+
+    /* Nav blur */
+    .nav-blur {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Testimonial card */
+    .testimonial-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Glow ring for product */
+    .glow-ring::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #c9a227, #f0d056, #c9a227);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .glow-ring:hover::after {
+      opacity: 1;
+    }
+
+    /* Smooth image placeholder */
+    .img-placeholder {
+      background: linear-gradient(135deg, #f5f5f5, #eeeeee);
+    }
+
+    /* Ornament line */
+    .ornament-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ornament-line::before,
+    .ornament-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c9a227, transparent);
+    }
+
+    /* Why choose us checkmark */
+    .check-gold {
+      color: #c9a227;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white/80 border-b border-gold-100/50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-full gold-shimmer flex items-center justify-center">
+            <i data-lucide="crown" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="font-playfair text-lg md:text-xl font-bold text-luxury-900 tracking-wide">Angsa<span class="text-gold-500">Kristal</span></span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#benefit" class="text-sm font-medium text-luxury-600 hover:text-gold-500 transition-colors duration-300">Keunggulan</a>
+          <a href="#produk" class="text-sm font-medium text-luxury-600 hover:text-gold-500 transition-colors duration-300">Produk</a>
+          <a href="#kenapa" class="text-sm font-medium text-luxury-600 hover:text-gold-500 transition-colors duration-300">Kenapa Kami</a>
+          <a href="#testimoni" class="text-sm font-medium text-luxury-600 hover:text-gold-500 transition-colors duration-300">Testimoni</a>
+          <a href="#cta-final" class="btn-gold text-white text-sm font-semibold px-6 py-2.5 rounded-full inline-block">Pesan Sekarang</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-luxury-700 hover:text-gold-500 transition-colors">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white/95 nav-blur border-t border-gold-100/30">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#benefit" class="block text-sm font-medium text-luxury-600 hover:text-gold-500 py-2 transition-colors">Keunggulan</a>
+        <a href="#produk" class="block text-sm font-medium text-luxury-600 hover:text-gold-500 py-2 transition-colors">Produk</a>
+        <a href="#kenapa" class="block text-sm font-medium text-luxury-600 hover:text-gold-500 py-2 transition-colors">Kenapa Kami</a>
+        <a href="#testimoni" class="block text-sm font-medium text-luxury-600 hover:text-gold-500 py-2 transition-colors">Testimoni</a>
+        <a href="#cta-final" class="btn-gold text-white text-sm font-semibold px-6 py-3 rounded-full block text-center mt-2">Pesan Sekarang</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-bg min-h-screen flex items-center pt-20 md:pt-0 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-20 right-0 w-72 h-72 bg-gold-100/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold-50/50 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gold-100/20 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-gold-100/15 rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <!-- Text Content -->
+        <div class="order-2 md:order-1 text-center md:text-left">
+          <div class="fade-in">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-gold-50 border border-gold-200/50 rounded-full text-gold-600 text-xs font-semibold tracking-wider uppercase mb-6">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              Koleksi Premium 2024
+            </span>
+          </div>
+          
+          <h1 class="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-luxury-900 leading-tight mb-6 fade-in" style="transition-delay: 0.1s">
+            Sentuhan Mewah untuk<br>
+            <span class="bg-gradient-to-r from-gold-500 to-gold-700 bg-clip-text text-transparent">Dashboard Mobil</span><br>
+            Anda
+          </h1>
+
+          <p class="text-luxury-500 text-sm sm:text-base md:text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0 fade-in" style="transition-delay: 0.2s">
+            Pajangan dashboard mobil motif angsa kristal premium yang dapat berputar otomatis dengan tenaga cahaya matahari, <strong class="text-luxury-700">tanpa baterai</strong>.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start fade-in" style="transition-delay: 0.3s">
+            <a href="#cta-final" class="btn-gold text-white font-semibold px-8 py-4 rounded-full text-sm md:text-base tracking-wide inline-flex items-center justify-center gap-2">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              Pesan Sekarang
+            </a>
+            <a href="#benefit" class="border-2 border-luxury-200 text-luxury-600 font-semibold px-8 py-4 rounded-full text-sm md:text-base tracking-wide inline-flex items-center justify-center gap-2 hover:border-gold-300 hover:text-gold-600 transition-all duration-300">
+              <i data-lucide="play-circle" class="w-5 h-5"></i>
+              Lihat Detail
+            </a>
+          </div>
+
+          <div class="flex items-center gap-6 mt-10 justify-center md:justify-start fade-in" style="transition-delay: 0.4s">
+            <div class="text-center">
+              <div class="font-playfair text-2xl font-bold text-gold-500">5K+</div>
+              <div class="text-xs text-luxury-400">Terjual</div>
+            </div>
+            <div class="w-px h-10 bg-luxury-200"></div>
+            <div class="text-center">
+              <div class="font-playfair text-2xl font-bold text-gold-500">4.9</div>
+              <div class="text-xs text-luxury-400 flex items-center gap-1">
+                <i data-lucide="star" class="w-3 h-3 fill-gold-400 text-gold-400"></i>
+                Rating
+              </div>
+            </div>
+            <div class="w-px h-10 bg-luxury-200"></div>
+            <div class="text-center">
+              <div class="font-playfair text-2xl font-bold text-gold-500">100%</div>
+              <div class="text-xs text-luxury-400">Premium</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="order-1 md:order-2 flex justify-center fade-in-right" style="transition-delay: 0.2s">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-gold-200/30 to-gold-100/20 rounded-full blur-2xl scale-110"></div>
+            <div class="relative float-animation">
+              <img src="http://static.photos/red/640x360/77" alt="Angsa Kristal Premium" class="w-64 sm:w-72 md:w-80 lg:w-96 rounded-3xl shadow-2xl shadow-gold-200/30 border border-gold-100/40">
+            </div>
+            <!-- Badge floating -->
+            <div class="absolute -top-2 -right-2 md:top-4 md:right-0 bg-white shadow-lg shadow-gold-100/30 rounded-2xl px-4 py-2.5 border border-gold-100/40">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full gold-shimmer flex items-center justify-center">
+                  <i data-lucide="sun" class="w-4 h-4 text-white"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-luxury-800">Solar Power</div>
+                  <div class="text-[10px] text-luxury-400">Tanpa Baterai</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-2 -left-2 md:bottom-6 md:left-0 bg-white shadow-lg shadow-gold-100/30 rounded-2xl px-4 py-2.5 border border-gold-100/40">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gold-50 flex items-center justify-center">
+                  <i data-lucide="rotate-3d" class="w-4 h-4 text-gold-500"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-luxury-800">Auto Rotate</div>
+                  <div class="text-[10px] text-luxury-400">Putar Otomatis</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-luxury-300">
+      <span class="text-[10px] uppercase tracking-widest">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-gold-300 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFIT SECTION ===== -->
+  <section id="benefit" class="py-20 md:py-32 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-14 md:mb-20">
+        <div class="fade-in">
+          <div class="ornament-line max-w-xs mx-auto mb-5">
+            <i data-lucide="gem" class="w-5 h-5 text-gold-400"></i>
+          </div>
+          <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-900 mb-4">
+            Keunggulan <span class="text-gold-500">Produk Kami</span>
+          </h2>
+          <p class="text-luxury-400 text-sm md:text-base max-w-xl mx-auto">
+            Kombinasi sempurna antara keindahan kristal dan teknologi solar premium
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <!-- Benefit 1 -->
+        <div class="luxury-card bg-white rounded-2xl p-8 text-center border border-luxury-100 hover:border-gold-200 fade-in" style="transition-delay: 0.05s">
+          <div class="benefit-icon-circle w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="sun" class="w-7 h-7 text-gold-500"></i>
+          </div>
+          <h3 class="font-playfair text-lg font-semibold text-luxury-800 mb-3">Berputar Otomatis</h3>
+          <p class="text-sm text-luxury-400 leading-relaxed">
+            Memanfaatkan tenaga cahaya matahari untuk berputar secara otomatis tanpa usaha manual
+          </p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="luxury-card bg-white rounded-2xl p-8 text-center border border-luxury-100 hover:border-gold-200 fade-in" style="transition-delay: 0.15s">
+          <div class="benefit-icon-circle w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="battery-off" class="w-7 h-7 text-gold-500"></i>
+          </div>
+          <h3 class="font-playfair text-lg font-semibold text-luxury-800 mb-3">Tanpa Baterai</h3>
+          <p class="text-sm text-luxury-400 leading-relaxed">
+            Tidak memerlukan baterai maupun listrik. Sepenuhnya menggunakan energi solar yang ramah lingkungan
+          </p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="luxury-card bg-white rounded-2xl p-8 text-center border border-luxury-100 hover:border-gold-200 fade-in" style="transition-delay: 0.25s">
+          <div class="benefit-icon-circle w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="sparkles" class="w-7 h-7 text-gold-500"></i>
+          </div>
+          <h3 class="font-playfair text-lg font-semibold text-luxury-800 mb-3">Interior Mewah</h3>
+          <p class="text-sm text-luxury-400 leading-relaxed">
+            Mempercantik interior mobil dengan kesan mewah, eksklusif, dan penuh selera tinggi
+          </p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="luxury-card bg-white rounded-2xl p-8 text-center border border-luxury-100 hover:border-gold-200 fade-in" style="transition-delay: 0.35s">
+          <div class="benefit-icon-circle w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="diamond" class="w-7 h-7 text-gold-500"></i>
+          </div>
+          <h3 class="font-playfair text-lg font-semibold text-luxury-800 mb-3">Material Premium</h3>
+          <p class="text-sm text-luxury-400 leading-relaxed">
+            Dibuat dari material kristal pilihan berkualitas tinggi dengan detail yang sangat halus dan elegan
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT SHOWCASE SECTION ===== -->
+  <section id="produk" class="py-20 md:py-32 bg-luxury-50 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-gold-100/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-gold-50/30 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center mb-14 md:mb-20">
+        <div class="fade-in">
+          <div class="ornament-line max-w-xs mx-auto mb-5">
+            <i data-lucide="palette" class="w-5 h-5 text-gold-400"></i>
+          </div>
+          <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-900 mb-4">
+            Pilihan Warna <span class="text-gold-500">Eksklusif</span>
+          </h2>
+          <p class="text-luxury-400 text-sm md:text-base max-w-xl mx-auto">
+            Tersedia dalam 5 varian warna premium yang memanjakan mata dan menyempurnakan interior mobil Anda
+          </p>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+        <!-- Product 1: Merah -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-luxury-100 relative group fade-in" style="transition-delay: 0.05s">
+          <div class="badge-best-seller text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-bl-lg rounded-tr-2xl absolute top-0 right-0 z-10">
+            Best Seller
+          </div>
+          <div class="aspect-square img-placeholder overflow-hidden relative">
+            <img src="http://static.photos/red/320x240/10" alt="Angsa Kristal Merah" class="product-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+          </div>
+          <div class="p-4 md:p-5 text-center">
+            <div class="w-3 h-3 rounded-full bg-red-500 mx-auto mb-2 ring-2 ring-red-200"></div>
+            <h3 class="font-playfair text-sm md:text-base font-semibold text-luxury-800">Merah</h3>
+            <p class="text-[11px] text-luxury-400 mt-1">Elegan & Bold</p>
+          </div>
+        </div>
+
+        <!-- Product 2: Pink -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-luxury-100 relative group fade-in" style="transition-delay: 0.1s">
+          <div class="badge-best-seller text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-bl-lg rounded-tr-2xl absolute top-0 right-0 z-10">
+            Best Seller
+          </div>
+          <div class="aspect-square img-placeholder overflow-hidden relative">
+            <img src="http://static.photos/red/320x240/22" alt="Angsa Kristal Pink" class="product-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+          </div>
+          <div class="p-4 md:p-5 text-center">
+            <div class="w-3 h-3 rounded-full bg-pink-400 mx-auto mb-2 ring-2 ring-pink-200"></div>
+            <h3 class="font-playfair text-sm md:text-base font-semibold text-luxury-800">Pink</h3>
+            <p class="text-[11px] text-luxury-400 mt-1">Soft & Feminin</p>
+          </div>
+        </div>
+
+        <!-- Product 3: Putih -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-luxury-100 relative group fade-in" style="transition-delay: 0.15s">
+          <div class="badge-best-seller text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-bl-lg rounded-tr-2xl absolute top-0 right-0 z-10">
+            Best Seller
+          </div>
+          <div class="aspect-square img-placeholder overflow-hidden relative">
+            <img src="http://static.photos/white/320x240/33" alt="Angsa Kristal Putih" class="product-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+          </div>
+          <div class="p-4 md:p-5 text-center">
+            <div class="w-3 h-3 rounded-full bg-white border-2 border-luxury-200 mx-auto mb-2 ring-2 ring-luxury-100"></div>
+            <h3 class="font-playfair text-sm md:text-base font-semibold text-luxury-800">Putih</h3>
+            <p class="text-[11px] text-luxury-400 mt-1">Pure & Classic</p>
+          </div>
+        </div>
+
+        <!-- Product 4: Biru -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-luxury-100 relative group fade-in" style="transition-delay: 0.2s">
+          <div class="badge-best-seller text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-bl-lg rounded-tr-2xl absolute top-0 right-0 z-10">
+            Best Seller
+          </div>
+          <div class="aspect-square img-placeholder overflow-hidden relative">
+            <img src="http://static.photos/blue/320x240/44" alt="Angsa Kristal Biru" class="product-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+          </div>
+          <div class="p-4 md:p-5 text-center">
+            <div class="w-3 h-3 rounded-full bg-blue-500 mx-auto mb-2 ring-2 ring-blue-200"></div>
+            <h3 class="font-playfair text-sm md:text-base font-semibold text-luxury-800">Biru</h3>
+            <p class="text-[11px] text-luxury-400 mt-1">Calm & Royal</p>
+          </div>
+        </div>
+
+        <!-- Product 5: Ungu -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden border border-luxury-100 relative group fade-in" style="transition-delay: 0.25s">
+          <div class="badge-best-seller text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-bl-lg rounded-tr-2xl absolute top-0 right-0 z-10">
+            Best Seller
+          </div>
+          <div class="aspect-square img-placeholder overflow-hidden relative">
+            <img src="http://static.photos/vintage/320x240/55" alt="Angsa Kristal Ungu" class="product-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+          </div>
+          <div class="p-4 md:p-5 text-center">
+            <div class="w-3 h-3 rounded-full bg-purple-500 mx-auto mb-2 ring-2 ring-purple-200"></div>
+            <h3 class="font-playfair text-sm md:text-base font-semibold text-luxury-800">Ungu</h3>
+            <p class="text-[11px] text-luxury-400 mt-1">Mystique & Luxe</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US SECTION ===== -->
+  <section id="kenapa" class="py-20 md:py-32 bg-white relative overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-gold-50/50 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center mb-14 md:mb-20">
+        <div class="fade-in">
+          <div class="ornament-line max-w-xs mx-auto mb-5">
+            <i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i>
+          </div>
+          <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-900 mb-4">
+            Kenapa Memilih Pajangan<br><span class="text-gold-500">Angsa Premium Kami?</span>
+          </h2>
+          <p class="text-luxury-400 text-sm md:text-base max-w-xl mx-auto">
+            Lebih dari sekadar pajangan — ini adalah statement kemewahan untuk kendaraan Anda
+          </p>
+        </div>
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <!-- Image -->
+        <div class="fade-in-left">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-gold-100/40 to-gold-50/20 rounded-3xl -m-4"></div>
+            <img src="http://static.photos/nature/640x360/88" alt="Interior Mobil dengan Angsa Kristal" class="relative rounded-3xl shadow-xl w-full">
+            <!-- Stats overlay -->
+            <div class="absolute -bottom-6 -right-2 md:-bottom-8 md:-right-6 bg-white shadow-xl rounded-2xl p-4 md:p-5 border border-gold-100/40">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 gold-shimmer rounded-xl flex items-center justify-center">
+                  <i data-lucide="trophy" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                  <div class="font-playfair text-xl md:text-2xl font-bold text-luxury-900">#1</div>
+                  <div class="text-xs text-luxury-400">Best Seller 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Points -->
+        <div class="fade-in-right">
+          <div class="space-y-6 md:space-y-7">
+            <div class="flex gap-4 group">
+              <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-gold-50 border border-gold-100 flex items-center justify-center group-hover:bg-gold-500 group-hover:border-gold-500 transition-all duration-300">
+                <i data-lucide="bird" class="w-5 h-5 text-gold-500 group-hover:text-white transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 class="font-playfair text-base md:text-lg font-semibold text-luxury-800 mb-1">Desain Angsa Kristal yang Elegan dan Unik</h3>
+                <p class="text-sm text-luxury-400 leading-relaxed">Detail kristal yang halus membentuk angsa yang anggun, menciptakan focal point memukau di dashboard mobil Anda.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 group">
+              <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-gold-50 border border-gold-100 flex items-center justify-center group-hover:bg-gold-500 group-hover:border-gold-500 transition-all duration-300">
+                <i data-lucide="crown" class="w-5 h-5 text-gold-500 group-hover:text-white transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 class="font-playfair text-base md:text-lg font-semibold text-luxury-800 mb-1">Menambah Kesan Mewah pada Interior Mobil</h3>
+                <p class="text-sm text-luxury-400 leading-relaxed">Transformasi instan yang meningkatkan kelas interior mobil Anda, layaknya kendaraan premium kelas dunia.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 group">
+              <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-gold-50 border border-gold-100 flex items-center justify-center group-hover:bg-gold-500 group-hover:border-gold-500 transition-all duration-300">
+                <i data-lucide="rotate-3d" class="w-5 h-5 text-gold-500 group-hover:text-white transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 class="font-playfair text-base md:text-lg font-semibold text-luxury-800 mb-1">Berputar Otomatis Saat Terkena Cahaya</h3>
+                <p class="text-sm text-luxury-400 leading-relaxed">Panel solar sensitif merespons cahaya matahari dan cahaya interior, membuat angsa berputar secara memukau.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 group">
+              <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-gold-50 border border-gold-100 flex items-center justify-center group-hover:bg-gold-500 group-hover:border-gold-500 transition-all duration-300">
+                <i data-lucide="battery-off" class="w-5 h-5 text-gold-500 group-hover:text-white transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 class="font-playfair text-base md:text-lg font-semibold text-luxury-800 mb-1">Tidak Memerlukan Baterai</h3>
+                <p class="text-sm text-luxury-400 leading-relaxed">Eco-friendly dan praktis — bekerja sepenuhnya dengan energi cahaya, tanpa perlu penggantian baterai.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 group">
+              <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-gold-50 border border-gold-100 flex items-center justify-center group-hover:bg-gold-500 group-hover:border-gold-500 transition-all duration-300">
+                <i data-lucide="gift" class="w-5 h-5 text-gold-500 group-hover:text-white transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 class="font-playfair text-base md:text-lg font-semibold text-luxury-800 mb-1">Cocok untuk Hadiah dan Koleksi</h3>
+                <p class="text-sm text-luxury-400 leading-relaxed">Pilihan hadiah sempurna untuk orang tercinta yang menghargai keindahan dan kemewahan di setiap detail.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL SECTION ===== -->
+  <section id="testimoni" class="py-20 md:py-32 bg-luxury-50 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-80 h-80 bg-gold-50/40 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-gold-100/20 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center mb-14 md:mb-20">
+        <div class="fade-in">
+          <div class="ornament-line max-w-xs mx-auto mb-5">
+            <i data-lucide="message-circle" class="w-5 h-5 text-gold-400"></i>
+          </div>
+          <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-900 mb-4">
+            Apa Kata <span class="text-gold-500">Mereka?</span>
+          </h2>
+          <p class="text-luxury-400 text-sm md:text-base max-w-xl mx-auto">
+            Testimoni nyata dari pelanggan yang telah merasakan sentuhan kemewahan
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card bg-white rounded-2xl p-7 md:p-8 border border-luxury-100 relative fade-in" style="transition-delay: 0.05s">
+          <div class="absolute top-6 right-6 text-gold-100">
+            <i data-lucide="quote" class="w-10 h-10"></i>
+          </div>
+          
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+          </div>
+          
+          <p class="text-luxury-600 text-sm leading-relaxed mb-6 italic">
+            "Dashboard mobil jadi terlihat jauh lebih elegan. Setiap teman naik mobil selalu bertanya pajangan apakah itu. Benar-benar menambah kesan premium!"
+          </p>
+          
+          <div class="flex items-center gap-3 pt-4 border-t border-luxury-100">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-200 to-gold-400 flex items-center justify-center">
+              <span class="text-white font-bold text-sm">AS</span>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-luxury-800">Andi S.</div>
+              <div class="text-xs text-luxury-400">Pengusaha, Jakarta</div>
+            </div>
+            <div class="ml-auto">
+              <span class="inline-flex items-center gap-1 text-[10px] text-green-600 bg-green-50 px-2 py-1 rounded-full font-medium">
+                <i data-lucide="check-circle" class="w-3 h-3"></i>
+                Verified
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card bg-white rounded-2xl p-7 md:p-8 border border-luxury-100 relative fade-in" style="transition-delay: 0.15s">
+          <div class="absolute top-6 right-6 text-gold-100">
+            <i data-lucide="quote" class="w-10 h-10"></i>
+          </div>
+          
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+          </div>
+          
+          <p class="text-luxury-600 text-sm leading-relaxed mb-6 italic">
+            "Unik dan berputar tanpa baterai, keren banget! Kualitas kristalnya juga bagus, pantas disebut premium. Sudah 3 bulan pakai dan masih berputar dengan lancar."
+          </p>
+          
+          <div class="flex items-center gap-3 pt-4 border-t border-luxury-100">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center">
+              <span class="text-white font-bold text-sm">RM</span>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-luxury-800">Rina M.</div>
+              <div class="text-xs text-luxury-400">Dokter, Surabaya</div>
+            </div>
+            <div class="ml-auto">
+              <span class="inline-flex items-center gap-1 text-[10px] text-green-600 bg-green-50 px-2 py-1 rounded-full font-medium">
+                <i data-lucide="check-circle" class="w-3 h-3"></i>
+                Verified
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card bg-white rounded-2xl p-7 md:p-8 border border-luxury-100 relative fade-in" style="transition-delay: 0.25s">
+          <div class="absolute top-6 right-6 text-gold-100">
+            <i data-lucide="quote" class="w-10 h-10"></i>
+          </div>
+          
+          <div class="flex items-center gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-gold-400 text-gold-400"></i>
+          </div>
+          
+          <p class="text-luxury-600 text-sm leading-relaxed mb-6 italic">
+            "Bikin interior mobil terasa lebih mahal. Saya beli yang warna biru dan hasilnya luar biasa cantik. Sekarang mau beli lagi untuk mobil istri saya."
+          </p>
+          
+          <div class="flex items-center gap-3 pt-4 border-t border-luxury-100">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-200 to-purple-400 flex items-center justify-center">
+              <span class="text-white font-bold text-sm">BH</span>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-luxury-800">Budi H.</div>
+              <div class="text-xs text-luxury-400">Arsitek, Bandung</div>
+            </div>
+            <div class="ml-auto">
+              <span class="inline-flex items-center gap-1 text-[10px] text-green-600 bg-green-50 px-2 py-1 rounded-full font-medium">
+                <i data-lucide="check-circle" class="w-3 h-3"></i>
+                Verified
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="mt-14 md:mt-20 flex flex-wrap items-center justify-center gap-6 md:gap-10 fade-in">
+        <div class="flex items-center gap-2 text-luxury-400">
+          <i data-lucide="truck" class="w-5 h-5 text-gold-400"></i>
+          <span class="text-xs md:text-sm">Gratis Ongkir</span>
+        </div>
+        <div class="w-px h-5 bg-luxury-200 hidden sm:block"></div>
+        <div class="flex items-center gap-2 text-luxury-400">
+          <i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i>
+          <span class="text-xs md:text-sm">Garansi Resmi</span>
+        </div>
+        <div class="w-px h-5 bg-luxury-200 hidden sm:block"></div>
+        <div class="flex items-center gap-2 text-luxury-400">
+          <i data-lucide="undo-2" class="w-5 h-5 text-gold-400"></i>
+          <span class="text-xs md:text-sm">Garansi Retur 7 Hari</span>
+        </div>
+        <div class="w-px h-5 bg-luxury-200 hidden sm:block"></div>
+        <div class="flex items-center gap-2 text-luxury-400">
+          <i data-lucide="package-check" class="w-5 h-5 text-gold-400"></i>
+          <span class="text-xs md:text-sm">Packing Aman</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL SECTION ===== -->
+  <section id="cta-final" class="py-20 md:py-32 dark-luxury relative overflow-hidden">
+    <!-- Decorative -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-gold-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-gold-500/5 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border border-gold-500/5 rounded-full"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+      <div class="fade-in">
+        <div class="ornament-line max-w-[200px] mx-auto mb-8">
+          <i data-lucide="crown" class="w-6 h-6 text-gold-400"></i>
+        </div>
+      </div>
+      
+      <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight fade-in" style="transition-delay: 0.1s">
+        Upgrade Interior Mobil<br>
+        <span class="bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-transparent">Anda Sekarang</span>
+      </h2>
+
+      <p class="text-luxury-400 text-sm md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed fade-in" style="transition-delay: 0.2s">
+        Miliki pajangan dashboard angsa kristal premium yang elegan dan berkelas. Stok terbatas — jangan sampai kehabisan.
+      </p>
+
+      <div class="fade-in" style="transition-delay: 0.3s">
+        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20pajangan%20angsa%20kristal%20premium" target="_blank" class="btn-gold inline-flex items-center justify-center gap-3 text-white font-bold px-10 md:px-14 py-4 md:py-5 rounded-full text-base md:text-lg tracking-wide">
+          <i data-lucide="message-circle" class="w-6 h-6"></i>
+          Saya Mau Pesan
+        </a>
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-6 fade-in" style="transition-delay: 0.4s">
+        <div class="flex items-center gap-2 text-luxury-500 text-xs md:text-sm">
+          <i data-lucide="lock" class="w-4 h-4 text-gold-400"></i>
+          Transaksi Aman
+        </div>
+        <div class="flex items-center gap-2 text-luxury-500 text-xs md:text-sm">
+          <i data-lucide="truck" class="w-4 h-4 text-gold-400"></i>
+          Pengiriman Cepat
+        </div>
+        <div class="flex items-center gap-2 text-luxury-500 text-xs md:text-sm">
+          <i data-lucide="shield-check" class="w-4 h-4 text-gold-400"></i>
+          Garansi Produk
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-luxury-900 border-t border-luxury-800 py-10 md:py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full gold-shimmer flex items-center justify-center">
+            <i data-lucide="crown" class="w-4 h-4 text-white"></i>
+          </div>
+          <span class="font-playfair text-lg font-bold text-white">Angsa<span class="text-gold-400">Kristal</span></span>
+        </div>
+        
+        <div class="flex items-center gap-6">
+          <a href="#" class="w-9 h-9 rounded-full bg-luxury-800 hover:bg-gold-500 flex items-center justify-center transition-colors duration-300">
+            <i data-lucide="instagram" class="w-4 h-4 text-white"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-luxury-800 hover:bg-gold-500 flex items-center justify-center transition-colors duration-300">
+            <i data-lucide="facebook" class="w-4 h-4 text-white"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-luxury-800 hover:bg-gold-500 flex items-center justify-center transition-colors duration-300">
+            <i data-lucide="twitter" class="w-4 h-4 text-white"></i>
+          </a>
+        </div>
+
+        <p class="text-luxury-500 text-xs text-center md:text-right">
+          © 2024 AngsaKristal. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY WHATSAPP BUTTON ===== -->
+  <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20pajangan%20angsa%20kristal%20premium" target="_blank" class="whatsapp-btn fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-110 group" aria-label="Chat WhatsApp">
+    <svg class="w-7 h-7 md:w-8 md:h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <!-- Tooltip -->
+    <span class="absolute right-full mr-3 bg-white text-luxury-700 text-xs font-semibold px-3 py-2 rounded-lg shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      Chat via WhatsApp
+    </span>
+  </a>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // ===== NAVBAR SCROLL EFFECT =====
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 80) {
+        navbar.classList.add('shadow-sm', 'bg-white/95');
+        navbar.classList.remove('bg-white/80');
+      } else {
+        navbar.classList.remove('shadow-sm', 'bg-white/95');
+        navbar.classList.add('bg-white/80');
+      }
+      
+      lastScroll = currentScroll;
+    });
+
+    // ===== MOBILE MENU TOGGLE =====
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('hidden');
+      
+      // Update icon
+      const icon = mobileMenuBtn.querySelector('[data-lucide]');
+      if (menuOpen) {
+        icon.setAttribute('data-lucide', 'x');
+      } else {
+        icon.setAttribute('data-lucide', 'menu');
+      }
+      lucide.createIcons();
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuOpen = false;
+        const icon = mobileMenuBtn.querySelector('[data-lucide]');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      });
+    });
+
+    // ===== SCROLL FADE-IN ANIMATION =====
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 80;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
